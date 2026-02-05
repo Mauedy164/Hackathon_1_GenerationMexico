@@ -52,3 +52,123 @@
 .footer .list-unstyled li {
     margin-bottom: 0.5rem;
 }
+
+/* Tarjetas de Productos */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+}
+
+.card-img-top {
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* Efecto Zoom en imagen al pasar mouse */
+.product-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+/* Servicios Hover */
+.hover-effect {
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.hover-effect:hover {
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* --- ANIMACIONES DE SCROLL --- */
+/* Estado inicial invisible y desplazado hacia abajo */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+/* Estado activo cuando JS detecta el scroll */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* carrusel */
+.carrusel-contenedor {
+  display: flex; /* Alinea elementos en fila */
+  overflow-x: auto; /* Habilita scroll horizontal */
+  scroll-snap-type: x mandatory; /* Ajuste suave */
+  gap: 10px; /* Espacio entre imágenes */
+    width: 100%;
+}
+
+.carrusel-item {
+  flex: 0 0 100%; /* Cada imagen ocupa el ancho completo */
+  scroll-snap-align: start; /* Alinea el inicio del item */
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+/* --- ESTILOS DEL CARRITO DESPLEGABLE --- */
+
+/* Estilo para cada fila de producto en el carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Imagen en miniatura dentro del carrito */
+.cart-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Texto del producto */
+.cart-details {
+    flex-grow: 1;
+    line-height: 1.2;
+}
+
+.cart-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: block;
+    color: var(--dark-color);
+}
+
+.footer a:hover {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.footer h5 {
+    margin-bottom: 1rem;
+}
+
+.btn-remove:hover {
+    transform: scale(1.2);
+    color: #a71d2a;
+}
