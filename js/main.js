@@ -49,48 +49,55 @@ function updateCartUI() {
     const container = document.getElementById('cart-items-container');
     const countBadge = document.getElementById('cart-count');
     const totalElement = document.getElementById('cart-total');
-    const emptyMsg = document.getElementById('empty-msg');
 
-    // Limpiar contenedor actual
+    // 1. Limpiar el contenedor actual para redibujarlo
     container.innerHTML = '';
 
-    // 1. Actualizar contador rojo
+    // 2. Actualizar el numerito rojo
     countBadge.innerText = cart.length;
 
-    // 2. Manejo de estado vacío
+    // 3. CASO: Carrito Vacío
     if (cart.length === 0) {
-        container.appendChild(emptyMsg); // Volver a poner mensaje vacío
+        // Inyectamos el HTML del mensaje de vacío manualmente para asegurar que siempre aparezca
+        container.innerHTML = `
+            <div class="text-center py-3">
+                <i class="fas fa-shopping-basket fa-2x text-muted mb-2"></i>
+                <p class="text-muted small mb-0">Tu carrito está vacío</p>
+            </div>
+        `;
         totalElement.innerText = "$0.00";
-        return;
+        return; // Terminamos aquí si está vacío
     }
 
-    // 3. Generar HTML para cada producto
+    // 4. CASO: Con Productos (Generar lista)
     let totalPrice = 0;
 
     cart.forEach(item => {
-        // Limpiamos el precio (quitamos el $) para sumar
+        // Limpiamos el precio ($) para poder sumar matemáticamente
         const priceNumber = parseFloat(item.price.replace('$', ''));
         totalPrice += priceNumber;
 
         const itemHTML = document.createElement('div');
         itemHTML.classList.add('cart-item', 'animate__animated', 'animate__fadeIn');
+        
+        // Estructura visual del item
         itemHTML.innerHTML = `
             <img src="${item.image}" class="cart-thumb" alt="prod">
             <div class="cart-details">
-                <span class="cart-title">${item.title}</span>
-                <span class="cart-price">${item.price}</span>
+                <span class="cart-title text-truncate" style="max-width: 150px;">${item.title}</span>
+                <span class="cart-price fw-bold">${item.price}</span>
             </div>
-            <button class="btn-remove" onclick="removeFromCart(${item.id})">
+            <button class="btn-remove text-danger" onclick="removeFromCart(${item.id})" title="Eliminar">
                 <i class="fas fa-trash-alt"></i>
             </button>
         `;
         container.appendChild(itemHTML);
     });
 
-    // 4. Actualizar Total
+    // 5. Actualizar precio total con 2 decimales
     totalElement.innerText = "$" + totalPrice.toFixed(2);
     
-    // Animación pequeña al icono del carrito en el navbar
+    // Animación visual del icono del carrito (Shake)
     const cartBtnIcon = document.querySelector('#cart-btn i');
     cartBtnIcon.classList.add('animate__animated', 'animate__headShake');
     setTimeout(() => {
