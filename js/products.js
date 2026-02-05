@@ -1,5 +1,6 @@
 // botón ver más
 
+
 const API_URL = './data/products.json'
 
 const btn_VerMas = document.getElementById("btn_VerMas")
@@ -8,43 +9,43 @@ const btn_VerMenos = document.getElementById("btn_VerMenos")
 
 
 btn_VerMas.addEventListener('click', desplegarProductos)
-btn_VerMenos.addEventListener('click', ocultarProductos )
+btn_VerMenos.addEventListener('click', ocultarProductos)
 
 const productosIniciales = product_container.innerHTML
 
-allProducts =[]
+allProducts = []
 
 //Fetch
 
 function fetchProductsList() {
-  const options = {'method': 'GET'}
-  fetch(API_URL, options)
-  .then((response)=>{ 
-    response.json().then((products)=>{
-      for (let i = 0; i < products.length; i++){
-        console.log(products[i]);
-      }
-      allProducts = products
-      
+    const options = { 'method': 'GET' }
+    fetch(API_URL, options)
+        .then((response) => {
+            response.json().then((products) => {
+                for (let i = 0; i < products.length; i++) {
+                    console.log(products[i]);
+                }
+                allProducts = products
 
-      localStorage.setItem('productos', JSON.stringify(products))
-      
-    })
-  })
-  .catch((err)=>{console.log(err.message);})
+
+                localStorage.setItem('productos', JSON.stringify(products))
+
+            })
+        })
+        .catch((err) => { console.log(err.message); })
 }
 
 function loadProductsFromStorage() {
-  const productosStorage = localStorage.getItem('productos');
-  
-  if (productosStorage) {
-    allProducts = JSON.parse(productosStorage);
-    console.log("Productos cargados desde el localStorage");
-  } else {
-    console.log("Productos cargados desde fetch");
-    fetchProductsList();
-  }
-  cargarProductosIniciales()
+    const productosStorage = localStorage.getItem('productos');
+
+    if (productosStorage) {
+        allProducts = JSON.parse(productosStorage);
+        console.log("Productos cargados desde el localStorage");
+    } else {
+        console.log("Productos cargados desde fetch");
+        fetchProductsList();
+    }
+    cargarProductosIniciales()
 }
 
 
@@ -56,7 +57,7 @@ function desplegarProductos() {
 
     for (let i = 3; i < allProducts.length; i++) {
         productosHTML += `
-    <div class="col-md-4 reveal">
+    <div class="col-md-4 ">
                 <div class="card h-100 product-card border-0 shadow-sm">
                     <div class="product-image-wrapper position-relative">
                         <img src="${allProducts[i].img}"
@@ -78,19 +79,19 @@ function desplegarProductos() {
                 </div>
             </div>
     `;
-        
+
     }
 
     product_container.innerHTML += productosHTML
-        
+
 }
 
-function cargarProductosIniciales(){
+function cargarProductosIniciales() {
     let productosHTMLInicial = ''
 
     for (let i = 0; i < 3; i++) {
         productosHTMLInicial += `
-    <div class="col-md-4 reveal">
+    <div class="col-md-4 ">
                 <div class="card h-100 product-card border-0 shadow-sm">
                     <div class="product-image-wrapper position-relative">
                         <img src="${allProducts[i].img}"
@@ -117,11 +118,11 @@ function cargarProductosIniciales(){
     product_container.innerHTML = productosHTMLInicial
 }
 
-function ocultarProductos(){
+function ocultarProductos() {
     btn_VerMenos.style.display = 'none'
     btn_VerMas.style.display = "block"
     cargarProductosIniciales()
-    
+
 }
 
 
