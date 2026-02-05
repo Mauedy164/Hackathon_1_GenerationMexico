@@ -14,7 +14,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
         <a class="navbar-brand fw-bold text-uppercase" href="#">
-            <i class="fas fa-running me-2"></i>Pelusa Shop
+            <img src="./src/logo.png" alt="" style="width: 5%; display: inline-block;" >
+        <h1>Pelusa Shop</h1>
+           
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -24,13 +26,33 @@
                 <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                <li class="nav-item ms-3">
-                    <button class="btn btn-primary position-relative" id="cart-btn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
-                            0
-                        </span>
-                    </button>
+                <!-- //CARRITO DESPLEGABLE -->
+                <li class="nav-item dropdown ms-3">
+    <button class="btn btn-primary position-relative" id="cart-btn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">
+            0
+        </span>
+    </button>
+
+    <div class="dropdown-menu dropdown-menu-end p-3 animate__animated animate__fadeIn" style="min-width: 350px;">
+        <h6 class="dropdown-header border-bottom mb-2">Tu Pedido</h6>
+        
+        <div id="cart-items-container" style="max-height: 300px; overflow-y: auto;">
+            <p class="text-center text-muted small my-3" id="empty-msg">Tu carrito está vacío</p>
+        </div>
+
+        <div class="border-top mt-2 pt-2">
+            <div class="d-flex justify-content-between fw-bold mb-2">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <button class="btn btn-success w-100 rounded-pill" onclick="alert('¡Redirigiendo a pasarela de pago!')">
+                Ir a Pagar <i class="fas fa-arrow-right ms-1"></i>
+            </button>
+        </div>
+    </div>
+</li>
                 </li>
             </ul>
         </div>

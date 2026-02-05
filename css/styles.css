@@ -15,6 +15,12 @@ body {
     transition: background 0.3s ease;
 }
 
+img {
+    float: left; /* o right */
+    margin: 0%; /* Opcional: espacio alrededor */
+}
+
+
 /* --- CONTENEDOR PRINCIPAL (Estructura y Scroll) --- */
 .hero-carrusel {
     /* Propiedades del Hero Original */
@@ -61,19 +67,19 @@ body {
 
 .slide-1 {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                      url('../src/pelusa.jpg');
+                        url('../src/pelusa.jpg');
 }
 
 .slide-2 {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                      url('../src/cr7.jpg');
+                        url('../src/cr7.jpg');
 }
 
 .slide-3 {
     background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                      url('../src/tem.jpg');
+                        url('../src/tem.jpg');
 }
-}
+
 
 /* Separador de Títulos */
 .divider {
@@ -151,3 +157,59 @@ img {
   display: block;
 }
 
+/* --- ESTILOS DEL CARRITO DESPLEGABLE --- */
+
+/* Estilo para cada fila de producto en el carrito */
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Imagen en miniatura dentro del carrito */
+.cart-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Texto del producto */
+.cart-details {
+    flex-grow: 1;
+    line-height: 1.2;
+}
+
+.cart-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+    display: block;
+    color: var(--dark-color);
+}
+
+.cart-price {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+}
+
+/* Botón de eliminar (papelera) */
+.btn-remove {
+    color: #dc3545;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: transform 0.2s;
+}
+
+.btn-remove:hover {
+    transform: scale(1.2);
+    color: #a71d2a;
+}
