@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,16 +16,90 @@
 
     <main>
 
+<!-- Nuevos Productos -->
+        <section id="nuevos" class="py-5 bg-dark">
+            <div class="container">
+                <div class=" text-center mb-5 text-white">
+                    <h2 class="fw-bold">NUEVOS LANZAMIENTOS</h2>
+                    <p>Descubre lo último en tecnología y equipamiento deportivo.</p>
+                    <div class="divider mx-auto bg-secondary"></div>
+                </div>
+
+                <!-- Carrusel-->
+                <div id="nuevosCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+
+                        <!-- Nuevo produnto 1 -->
+                        <div class="carousel-item active">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="./src/balon_nuevo.png" class="d-block w-100 rounded shadow" alt="Producto 1">
+                                </div>
+                                <div class="col-md-6 text-center text-white">
+                                    <h3 class="fw-bold">Balón FC 2024 - Diseño Premium</h3>
+                                    <p >Balón de alto rendimiento con acabado profesional y patrón dinámico que mejora la visibilidad y el control. Ideal para partidos intensos y entrenamientos exigentes.</p>
+                                    <a href="#productos" class="btn btn-secondary">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- nuevo producto2 -->
+                        <div class="carousel-item">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="./src/playera_nueva.png" class="d-block w-100 rounded shadow" alt="Producto 2">
+                                </div>
+                                <div class="col-md-6 text-center text-white">
+                                    <h3 class="fw-bold">Jersey FC Local - Temporada 2024</h3>
+                                    <p>Un jersey que une tradición y modernidad con un diseño icónico en rojo y negro. Confeccionado en tela transpirable para máxima comodidad y rendimiento dentro y fuera del campo.</p>
+                                    <a href="#productos" class="btn btn-secondary">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- nuevo producto 3 -->
+                        <div class="carousel-item">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <img src="./src/tennis_nuevos.png" class="d-block w-100 rounded shadow" alt="Producto 3">
+                                </div>
+                                <div class="col-md-6 text-center text-white">
+                                    <h3 class="fw-bold">Tachones FC Rojo & Negro - Edición Pro</h3>
+                                    <p>Diseñados para jugadores que buscan velocidad y control, estos tachones combinan un diseño audaz con materiales ligeros y resistentes, ofreciendo estabilidad, tracción y un look que impone en la cancha.</p>
+                                    <a href="#productos" class="btn btn-secondary">Ver más</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                <!-- bonotes -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#nuevosCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#nuevosCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
 
 
     </main>
 
-    <footer>
-
-
-
+    <footer class="bg-black text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Peluche Shop. Todos los derechos reservados.</p>
+            <div class="mt-2">
+                <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
 
     <script src="./js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
