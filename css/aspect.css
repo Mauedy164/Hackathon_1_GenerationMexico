@@ -1,0 +1,194 @@
+    /* ==========================================
+   SISTEMA DE TEMAS - MODO CLARO/OSCURO
+   ========================================== */
+
+/* Variables del tema oscuro (por defecto) */
+body[data-theme="dark"] {
+    --bg-primary: #212529;
+    --bg-secondary: #343a40;
+    --text-primary: #ffffff;
+    --text-secondary: #adb5bd;
+    --card-bg: #343a40;
+    --border-color: #495057;
+}
+
+/* Variables del tema claro */
+body[data-theme="light"] {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+}
+
+/* Aplicar transiciones suaves */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ========== MODO CLARO ========== */
+
+/* Fondo general del body */
+body[data-theme="light"] {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+/* Navbar */
+body[data-theme="light"] .navbar {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body[data-theme="light"] .navbar-brand,
+body[data-theme="light"] .nav-link {
+    color: #212529 !important;
+}
+
+body[data-theme="light"] .nav-link:hover {
+    color: #0d6efd !important;
+}
+
+/* Dropdown del carrito */
+body[data-theme="light"] .dropdown-menu {
+    background-color: #ffffff !important;
+}
+
+body[data-theme="light"] .dropdown-header,
+body[data-theme="light"] #cart-items-container p,
+body[data-theme="light"] .cart-title,
+body[data-theme="light"] .cart-price,
+body[data-theme="light"] #cart-total,
+body[data-theme="light"] .border-top span {
+    color: #212529 !important;
+}
+
+body[data-theme="light"] .cart-item {
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* Hero/Carrusel - mantener oscuro para legibilidad */
+body[data-theme="light"] .hero-item {
+    /* Mantener el overlay oscuro para que el texto blanco sea legible */
+}
+
+/* Secciones */
+body[data-theme="light"] #nuevos,
+body[data-theme="light"] #productos {
+    background-color: var(--bg-primary) !important;
+}
+
+body[data-theme="light"] .bg-dark {
+    background-color: var(--bg-secondary) !important;
+}
+
+body[data-theme="light"] .text-white {
+    color: var(--text-primary) !important;
+}
+
+body[data-theme="light"] .text-white-50 {
+    color: var(--text-secondary) !important;
+}
+
+/* Tarjetas de productos */
+body[data-theme="light"] .product-card {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+body[data-theme="light"] .product-card .card-title,
+body[data-theme="light"] .product-card h4 {
+    color: var(--text-primary) !important;
+}
+
+body[data-theme="light"] .product-card .card-text {
+    color: var(--text-secondary) !important;
+}
+
+/* Overlay de imágenes de productos */
+body[data-theme="light"] .product-image-overlay {
+    background: linear-gradient(transparent, rgba(255, 255, 255, 0.95));
+    color: #212529;
+}
+
+/* Footer */
+body[data-theme="light"] .footer {
+    background-color: #343a40 !important;
+    color: #ffffff !important;
+}
+
+body[data-theme="light"] .footer h5,
+body[data-theme="light"] .footer p,
+body[data-theme="light"] .footer a {
+    color: #ffffff !important;
+}
+
+/* Divider */
+body[data-theme="light"] .divider {
+    background-color: #0d6efd !important;
+}
+
+/* Botón de tema */
+#btn_aspect {
+    transition: all 0.3s ease;
+}
+
+#btn_aspect:hover {
+    transform: scale(1.05);
+}
+
+/* Bordes en modo claro */
+body[data-theme="light"] .border-secondary {
+    border-color: var(--border-color) !important;
+}
+
+/* Carrusel de nuevos productos */
+body[data-theme="light"] #nuevosCarousel .carousel-item h3,
+body[data-theme="light"] #nuevosCarousel .carousel-item p {
+    color: var(--text-primary) !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Ajuste para el fondo del carrusel en modo claro */
+body[data-theme="light"] #nuevos .carousel-item {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Botón de tema - estilos mejorados */
+#btn_aspect {
+    transition: all 0.3s ease;
+}
+
+#btn_aspect:hover {
+    transform: scale(1.05);
+}
+
+/* Botón en MODO CLARO - debe ser oscuro para contrastar */
+body[data-theme="light"] #btn_aspect {
+    background-color: #212529 !important;
+    color: #ffffff !important;
+    border-color: #212529 !important;
+}
+
+body[data-theme="light"] #btn_aspect:hover {
+    background-color: #343a40 !important;
+    border-color: #343a40 !important;
+    color: #ffffff !important;
+}
+
+/* Botón en MODO OSCURO - outline claro */
+body[data-theme="dark"] #btn_aspect {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body[data-theme="dark"] #btn_aspect:hover {
+    background-color: #ffffff;
+    color: #212529;
+    border-color: #ffffff;
+}

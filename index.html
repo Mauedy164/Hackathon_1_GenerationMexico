@@ -1,209 +1,240 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportX - Tu Tienda Deportiva</title>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./css/styles.css">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="./css/aspect.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-        <a class="navbar-brand fw-bold text-uppercase" href="#">
-            <img src="./src/logo.png" alt="Logo" style="width: 30px; height: auto; margin-right: 10px;">
-            <span>Pelusa Shop</span>
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-uppercase" href="#">
+                <img src="./src/logo.png" alt="Logo" style="width: 30px; height: auto; margin-right: 10px;">
+                <span>Pelusa Shop</span>
+            </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contacto">Contactanos</a></li>
-                
-                <li class="nav-item dropdown ms-lg-3">
-                    <a class="nav-link dropdown-toggle btn btn-primary text-white position-relative px-3" 
-                       href="#" 
-                       id="cartDropdown" 
-                       role="button" 
-                       data-bs-toggle="dropdown" 
-                       data-bs-auto-close="outside" 
-                       aria-expanded="false">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-count">0</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end p-3 shadow-lg animate__animated animate__fadeIn" style="background-color: rgb(62, 66, 70); min-width: 350px;">
-                        <h6 class="dropdown-header border-bottom mb-2 text-white">Tu Pedido</h6>
-                        <div id="cart-items-container" style="max-height: 300px; overflow-y: auto;">
-                            <p class="text-center text-white small my-3">Tu carrito está vacío</p>
-                        </div>
-                        <div class="border-top mt-2 pt-2">
-                            <div class="d-flex justify-content-between fw-bold mb-2 text-white">
-                                <span>Total:</span>
-                                <span id="cart-total">$0.00</span>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <button id="btn_aspect" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-sun"></i> Modo Claro
+                        </button>
+                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contáctanos</a></li>
+
+                    <li class="nav-item dropdown ms-lg-3">
+                        <a class="nav-link dropdown-toggle btn btn-primary text-white position-relative px-3" href="#"
+                            id="cartDropdown" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside"
+                            aria-expanded="false">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                id="cart-count">0</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end p-3 shadow-lg animate__animated animate__fadeIn"
+                            style="background-color: rgb(62, 66, 70); min-width: 350px;">
+                            <h6 class="dropdown-header border-bottom mb-2 text-white">Tu Pedido</h6>
+                            <div id="cart-items-container" style="max-height: 300px; overflow-y: auto;">
+                                <p class="text-center text-white small my-3">Tu carrito está vacío</p>
                             </div>
-                            <button class="btn btn-success w-100 rounded-pill text-white" onclick="alert('¡Redirigiendo a la pantalla de pago!')">
-                                Ir a Pagar <i class="fas fa-arrow-right ms-1"></i>
-                            </button>
+                            <div class="border-top mt-2 pt-2">
+                                <div class="d-flex justify-content-between fw-bold mb-2 text-white">
+                                    <span>Total:</span>
+                                    <span id="cart-total">$0.00</span>
+                                </div>
+                                <button class="btn btn-success w-100 rounded-pill text-white"
+                                    onclick="alert('¡Redirigiendo a la pantalla de pago!')">
+                                    Ir a Pagar <i class="fas fa-arrow-right ms-1"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<header id="inicio" class="hero-carrusel">
-    
-    <div class="hero-item slide-1">
-        <div class="container animate__animated animate__fadeInDown">
-            <h1 class="display-3 fw-bold">Supera tus límites</h1>
-            <p class="lead mb-4">El mejor equipamiento deportivo para atletas de alto rendimiento.</p>
-            <a href="#productos" class="btn btn-primary btn-lg px-5 rounded-pill shadow">Ver Colección</a>
+    <header id="inicio" class="hero-carrusel">
+
+        <div class="hero-item slide-1">
+            <div class="container animate__animated animate__fadeInDown">
+                <h1 class="display-3 fw-bold">Supera tus límites</h1>
+                <p class="lead mb-4">El mejor equipamiento deportivo para atletas de alto rendimiento.</p>
+                <a href="#productos" class="btn btn-primary btn-lg px-5 rounded-pill shadow">Ver Colección</a>
+            </div>
         </div>
-    </div>
 
-    <div class="hero-item slide-2">
-        <div class="container">
-            <h1 class="display-3 fw-bold">Entrena con Fuerza</h1>
-            <p class="lead mb-4">Accesorios de gimnasio diseñados para durar.</p>
-            <a href="#Contacto" class="btn btn-outline-light btn-lg px-5 rounded-pill shadow">Contactanos!</a>
+        <div class="hero-item slide-2">
+            <div class="container">
+                <h1 class="display-3 fw-bold">Entrena con Fuerza</h1>
+                <p class="lead mb-4">Accesorios de gimnasio diseñados para durar.</p>
+                <a href="#Contacto" class="btn btn-outline-light btn-lg px-5 rounded-pill shadow">¡Contáctanos!</a>
+            </div>
         </div>
-    </div>
 
-    <div class="hero-item slide-3">
-        <div class="container">
-            <h1 class="display-3 fw-bold">Pasión por el Fútbol</h1>
-            <p class="lead mb-4">Balones, tacos y uniformes de nivel profesional.</p>
-            <a href="#productos" class="btn btn-outline-light btn-lg px-5 rounded-pill shadow">Adquiere los tuyos!</a>
+        <div class="hero-item slide-3">
+            <div class="container">
+                <h1 class="display-3 fw-bold">Pasión por el Fútbol</h1>
+                <p class="lead mb-4">Balones, tacos y uniformes de nivel profesional.</p>
+                <a href="#productos" class="btn btn-outline-light btn-lg px-5 rounded-pill shadow">¡Adquiere los
+                    tuyos!</a>
+            </div>
         </div>
-    </div>
 
-</header>
+    </header>
 
-    
+
 
     <main>
 
-<!-- Nuevos Productos -->
- <div>
-        <section id="nuevos" class="py-5 bg-dark">
-            <div class="container">
-                <div class=" text-center mb-5 text-white">
-                    <h2 class="fw-bold">NUEVOS LANZAMIENTOS</h2>
-                    <p>Descubre lo último en tecnología y equipamiento deportivo.</p>
-                    <div class="divider mx-auto bg-secondary"></div>
-                </div>
-
-                <!-- Carrusel-->
-                <div id="nuevosCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-
-                        <!-- Nuevo producto 1 -->
-                        <div class="carousel-item active" data-bs-interval="4000">
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <img src="./src/balon_nuevo.png" class="d-block w-100 rounded shadow" alt="Producto 1">
-                                </div>
-                                <div class="col-md-6 text-center text-white">
-                                    <h3 class="fw-bold">Balón FC 2024 - Diseño Premium</h3>
-                                    <p >Balón de alto rendimiento con acabado profesional y patrón dinámico que mejora la visibilidad y el control. Ideal para partidos intensos y entrenamientos exigentes.</p>
-                                    <a href="#productos" class="btn btn-secondary">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- nuevo producto2 -->
-                        <div class="carousel-item" data-bs-interval="4000">
-                            <div class="row align-items-center">
-                                <div class="col-md-6 bg">
-                                    <img src="./src/playera_nueva.png" class="d-block w-100 rounded shadow" alt="Producto 2">
-                                </div>
-                                <div class="col-md-6 text-center text-white">
-                                    <h3 class="fw-bold bg">Jersey FC Local - Temporada 2024</h3>
-                                    <p>Un jersey que une tradición y modernidad con un diseño icónico en rojo y negro. Confeccionado en tela transpirable para máxima comodidad y rendimiento dentro y fuera del campo.</p>
-                                    <a href="#productos" class="btn btn-secondary">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- nuevo producto 3 -->
-                        <div class="carousel-item" data-bs-interval="4000">
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <img src="./src/tennis_nuevos.png" class="d-block w-100 rounded shadow" alt="Producto 3">
-                                </div>
-                                <div class="col-md-6 text-center text-white">
-                                    <h3 class="fw-bold">Tachones FC Rojo & Negro - Edición Pro</h3>
-                                    <p>Diseñados para jugadores que buscan velocidad y control, estos tachones combinan un diseño audaz con materiales ligeros y resistentes, ofreciendo estabilidad, tracción y un look que impone en la cancha.</p>
-                                    <a href="#productos" class="btn btn-secondary">Ver más</a>
-                                </div>
-                            </div>
-                        </div>
-
+        <!-- Nuevos Productos -->
+        <div>
+            <section id="nuevos" class="py-5 bg-dark">
+                <div class="container">
+                    <div class=" text-center mb-5 text-white">
+                        <h3 class="fw-bold">SÉ RÁPIDO</h3>
+                        <h3 class="fw-bold">SÉ FUERTE</h3>
+                        <h3 class="fw-bold">SÉ ÁGIL</h3>
+                        <h2 class="fw-bold">¡SÉ PELUCHE CALIGARI!</h2>
+                        <p>Conoce nuestra nueva linea inspirarda en el mejor equipo de la Kings League</p>
+                        <div class="divider mx-auto bg-secondary"></div>
                     </div>
 
-                <!-- bonotes -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#nuevosCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#nuevosCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+                    <!-- Carrusel-->
+                    <div id="nuevosCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+
+                            <!-- Nuevo producto 1 -->
+                            <div class="carousel-item active" data-bs-interval="4000">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <img src="./src/balon_nuevo.png" class="d-block w-100 rounded shadow"
+                                            alt="Producto 1">
+                                    </div>
+                                    <div class="col-md-6 text-center text-white">
+                                        <h3 class="fw-bold">Balón FC 2024 - Diseño Premium</h3>
+                                        <p>Balón de alto rendimiento con acabado profesional y patrón dinámico que
+                                            mejora la visibilidad y el control. Ideal para partidos intensos y
+                                            entrenamientos exigentes.</p>
+                                        <a href="#productos" class="btn btn-secondary">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- nuevo producto2 -->
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6 bg">
+                                        <img src="./src/playera_nueva.png" class="d-block w-100 rounded shadow"
+                                            alt="Producto 2">
+                                    </div>
+                                    <div class="col-md-6 text-center text-white">
+                                        <h3 class="fw-bold bg">Jersey FC Local - Temporada 2024</h3>
+                                        <p>Un jersey que une tradición y modernidad con un diseño icónico en rojo y
+                                            negro. Confeccionado en tela transpirable para máxima comodidad y
+                                            rendimiento dentro y fuera del campo.</p>
+                                        <a href="#productos" class="btn btn-secondary">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- nuevo producto 3 -->
+                            <div class="carousel-item" data-bs-interval="4000">
+                                <div class="row align-items-center">
+                                    <div class="col-md-6">
+                                        <img src="./src/tennis_nuevos.png" class="d-block w-100 rounded shadow"
+                                            alt="Producto 3">
+                                    </div>
+                                    <div class="col-md-6 text-center text-white">
+                                        <h3 class="fw-bold">Tachones FC Rojo & Negro - Edición Pro</h3>
+                                        <p>Diseñados para jugadores que buscan velocidad y control, estos tachones
+                                            combinan un diseño audaz con materiales ligeros y resistentes, ofreciendo
+                                            estabilidad, tracción y un look que impone en la cancha.</p>
+                                        <a href="#productos" class="btn btn-secondary">Ver más</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- bonotes -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#nuevosCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#nuevosCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-<!-- Tarjetas de productos-->
-<section id="productos" class="py-5 bg-dark">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-uppercase">Productos Destacados</h2>
-      <div class="divider mx-auto bg-secondary"></div>
-    </div>
+            <!-- Tarjetas de productos-->
+            <section id="productos" class="py-5 bg-dark border-top border-secondary">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <h2 class="fw-bold text-uppercase text-white">Productos Destacados</h2>
+                        <div class="divider mx-auto bg-secondary"></div>
+                    </div>
 
-    <div class="row g-4" id="product_container">
-      
-    </div> <!-- row g-4 -->
-    <button class="btn btn-primary" type="button"  style="display: block;" id="btn_VerMas">Ver más</button>
-    <button class="btn btn-primary" type="button" style="display: none;" id="btn_VerMenos">Ver menos</button>
-  </div> <!-- container -->
-</section>
-<!--Fin de tarjetas de Productos-->
+                    <div class="row g-4" id="product_container">
 
-
+                    </div> <!-- row g-4 -->
+                    <!-- Botones Ver más / Ver menos -->
+                    <section class="d-flex justify-content-center align-items-center mt-4">
+                        <button class="btn btn-primary" type="button" style="display: block;" id="btn_VerMas">Ver
+                            más 🔻</button>
+                        <button class="btn btn-primary" type="button" style="display: none;" id="btn_VerMenos">Ver
+                            menos 🔺</button>
+                    </section>
+                </div> <!-- container -->
+            </section>
+            <!--Fin de tarjetas de Productos-->
     </main>
 
-        <footer class="bg-dark text-white pt-5 footer">
-            <div class="container">
-                <div class="row">
+    <footer class="bg-dark text-white pt-5 footer border-top border-secondary">
+        <div class="container">
+            <div class="row">
 
 
-            <!-- Sobre la tienda y redes-->
+                <!-- Sobre la tienda y redes-->
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold">PELUSA SHOP</h5>
                     <p>
-                        Tu tienda deportiva de confianza. Equipamiento de calidad para atletas de alto rendimiento y apasionados del deporte.
+                        Tu tienda deportiva de confianza. Equipamiento de calidad para atletas de alto rendimiento y
+                        apasionados del deporte.
                     </p>
                     <div class="mt-3">
-                        <a href="#" class="text-white me-3"><img src="./src/facebook.svg" alt="facebook" style="width: 15%; display: inline-block;"></a>
-                        <a href="#" class="text-white me-3"><img src="./src/twitter.svg" alt="twitter" style="width: 22%; display: inline-block;"></a>
-                        <a href="#" class="text-white me-3"><img src="./src/instagram.svg" alt="instagram" style="width: 15%; display: inline-block;"></a>
+                        <a href="#" class="text-white me-3"><img src="./src/facebook.svg" alt="facebook"
+                                style="width: 15%; display: inline-block;"></a>
+                        <a href="#" class="text-white me-3"><img src="./src/twitter.svg" alt="twitter"
+                                style="width: 22%; display: inline-block;"></a>
+                        <a href="#" class="text-white me-3"><img src="./src/instagram.svg" alt="instagram"
+                                style="width: 15%; display: inline-block;"></a>
                     </div>
                 </div>
-                
 
-            <!-- Enlaces de la pagina-->
+
+                <!-- Enlaces de la pagina-->
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold">ENLACES</h5>
                     <ul class="list-unstyled">
@@ -212,10 +243,10 @@
                         <li><a href="#nuevos" class="text-white text-decoration-none">Nuevos Productos</a></li>
                         <li><a href="#contacto" class="text-white text-decoration-none">Contacto</a></li>
                     </ul>
-                
+
                 </div>
 
-            <!-- Contacto  -->
+                <!-- Contacto  -->
                 <div id="contacto" class="col-md-4 mb-4">
                     <h5 class="fw-bold">CONTÁCTENOS</h5>
                     <p> +52 55 1234 5678</p>
@@ -223,20 +254,23 @@
 
                 </div>
 
-                </div> <!-- row -->
-                <div class="text-center mt-4 border-top border-secondary pt-3">
-                    <p class="mb-0">&copy; 2026 Pelusa Shop. Todos los derechos reservados. Este programa es público, ajeno a cualquier partido político. Queda prohibido el uso para fines distintos a los establecidos en el programa</p>
-                </div>
-            </div> <!-- container -->
-        </footer>
+            </div> <!-- row -->
+            <div class="text-center mt-4 border-top border-secondary pt-3">
+                <p class="mb-0">&copy; 2026 Pelusa Shop. Todos los derechos reservados. Este programa es público, ajeno
+                    a cualquier partido político. Queda prohibido el uso para fines distintos a los establecidos en el
+                    programa</p>
+            </div>
+        </div> <!-- container -->
+    </footer>
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="./js/main.js"></script>
-<script src="./js/products.js"></script>
-<script src="./js/carrusel.js"></script>
-    
+    <script src="./js/main.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/carrusel.js"></script>
+    <script src="./js/aspect.js"></script>
+
 </body>
 
 </html>
