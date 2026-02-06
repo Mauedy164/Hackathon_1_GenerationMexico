@@ -61,8 +61,8 @@ function updateCartUI() {
         // Inyectamos el HTML del mensaje de vacío manualmente para asegurar que siempre aparezca
         container.innerHTML = `
             <div class="text-center py-3">
-                <i class="fas fa-shopping-basket fa-2x text-muted mb-2"></i>
-                <p class="text-muted small mb-0">Tu carrito está vacío</p>
+                <i class="fas fa-shopping-basket fa-2x text-white mb-2"></i>
+                <p class="text-white small mb-0">Tu carrito está vacío</p>
             </div>
         `;
         totalElement.innerText = "$0.00";
@@ -84,8 +84,8 @@ function updateCartUI() {
         itemHTML.innerHTML = `
             <img src="${item.image}" class="cart-thumb" alt="prod">
             <div class="cart-details">
-                <span class="cart-title text-truncate" style="max-width: 150px;">${item.title}</span>
-                <span class="cart-price fw-bold">${item.price}</span>
+                <span class="cart-title text-white" style="max-width: 150px;">${item.title}</span>
+                <span class="cart-price fw-bold text-white">${item.price}</span>
             </div>
             <button class="btn-remove text-danger" onclick="removeFromCart(${item.id})" title="Eliminar">
                 <i class="fas fa-trash-alt"></i>
