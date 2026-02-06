@@ -13,16 +13,16 @@ btn_aspect.addEventListener('click', cambiarTema)
 function cambiarTema() {
     const temaActual = document.body.getAttribute('data-theme')
     const nuevoTema = temaActual === 'dark' ? 'light' : 'dark'
-    
+
     // Cambiar el atributo data-theme en el body
     document.body.setAttribute('data-theme', nuevoTema)
-    
+
     // Guardar en localStorage
     localStorage.setItem('tema', nuevoTema)
-    
+
     // Actualizar texto del botón
     actualizarTextoBoton(nuevoTema)
-    
+
     // Animación del botón
     btn_aspect.classList.add('animate__animated', 'animate__pulse')
     setTimeout(() => {
