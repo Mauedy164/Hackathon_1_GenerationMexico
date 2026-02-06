@@ -275,3 +275,38 @@ img {
 .product-image-wrapper:hover .card-img-top {
     transform: scale(1.1);
 }
+
+
+/* styles para carrito desplegable */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-details {
+    flex-grow: 1;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-remove {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-remove:hover {
+    transform: scale(1.2);
+}
