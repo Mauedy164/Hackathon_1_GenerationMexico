@@ -104,3 +104,12 @@ function updateCartUI() {
         cartBtnIcon.classList.remove('animate__animated', 'animate__headShake');
     }, 500);
 }
+
+
+// Forzar carrito
+
+// Agrega esto dentro de tu script principal
+const dropdownElementList = document.querySelectorAll('.dropdown-toggle');
+const dropdownList = [...dropdownElementList].map(dropdownToggleEl => new bootstrap.Dropdown(dropdownToggleEl));
+
+
