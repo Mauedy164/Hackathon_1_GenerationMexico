@@ -1,13 +1,14 @@
 // botón ver más
 
-
+//
 const API_URL = './data/products.json'
 
+//Extracción de DOM
 const btn_VerMas = document.getElementById("btn_VerMas")
 const product_container = document.getElementById("product_container")
 const btn_VerMenos = document.getElementById("btn_VerMenos")
 
-
+//Da funcionalidad de botones para desplegar y ocultar productos
 btn_VerMas.addEventListener('click', desplegarProductos)
 btn_VerMenos.addEventListener('click', ocultarProductos)
 
@@ -15,7 +16,7 @@ const productosIniciales = product_container.innerHTML
 
 allProducts = []
 
-//Fetch
+//Fetch para la carga de productos 
 
 function fetchProductsList() {
     const options = { 'method': 'GET' }
@@ -35,6 +36,7 @@ function fetchProductsList() {
         .catch((err) => { console.log(err.message); })
 }
 
+//Carga de productos de local storage o en caso de no existir información en storage, realiza el fetch a la API
 function loadProductsFromStorage() {
     const productosStorage = localStorage.getItem('productos');
 
@@ -48,9 +50,9 @@ function loadProductsFromStorage() {
     }
 }
 
-
+//Realizar el despliegue de todos los productos que se encuentren en la base de datos
 function desplegarProductos() {
-    btn_VerMenos.style.display = 'block'
+    btn_VerMenos.style.display = 'block' 
     btn_VerMas.style.display = "none"
 
     let productosHTML = ''
@@ -85,6 +87,8 @@ function desplegarProductos() {
 
 }
 
+
+//Carga los primeros tres productos de la base de datos
 function cargarProductosIniciales() {
     let productosHTMLInicial = ''
 
@@ -116,6 +120,7 @@ function cargarProductosIniciales() {
     product_container.innerHTML = productosHTMLInicial
 }
 
+//Oculta los productos, excepto los primeros tres
 function ocultarProductos() {
     btn_VerMenos.style.display = 'none'
     btn_VerMas.style.display = "block"
