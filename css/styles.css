@@ -125,7 +125,7 @@ img {
   overflow-x: auto; /* Habilita scroll horizontal */
   scroll-snap-type: x mandatory; /* Ajuste suave */
   gap: 10px; /* Espacio entre imágenes */
-  width: 100%;
+    width: 100%;
 }
 
 .carrusel-item {
@@ -134,8 +134,8 @@ img {
 }
 
 img {
-  width: 100%;
-  display: block;
+    width: 100%;
+    display: block;
 }
 
 /* --- ESTILOS DEL CARRITO DESPLEGABLE --- */
@@ -309,4 +309,53 @@ img {
 
 .btn-remove:hover {
     transform: scale(1.2);
+}
+
+
+/* Sección Nuevos Productos */
+#nuevos {
+    background: #fff;
+}
+
+#nuevos h2 {
+    color: var(--dark-color);
+}
+
+#nuevos .carousel-item img {
+    max-height: 350px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+#nuevos .carousel-item img:hover {
+    transform: scale(1.05);
+}
+
+#nuevos .carousel-control-prev-icon,
+#nuevos .carousel-control-next-icon {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 15px;
+}
+
+/* Separador de Títulos */
+.divider {
+    height: 4px;
+    width: 60px;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+
+.footer a:hover {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+.footer h5 {
+    margin-bottom: 1rem;
+}
+
+.footer .list-unstyled li {
+    margin-bottom: 0.5rem;
 }
