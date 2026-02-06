@@ -52,7 +52,7 @@ function loadProductsFromStorage() {
 
 //Realizar el despliegue de todos los productos que se encuentren en la base de datos
 function desplegarProductos() {
-    btn_VerMenos.style.display = 'block' 
+    btn_VerMenos.style.display = 'block'
     btn_VerMas.style.display = "none"
 
     let productosHTML = ''

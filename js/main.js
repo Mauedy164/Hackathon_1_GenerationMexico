@@ -5,8 +5,8 @@ let cart = []; // Array para guardar los productos
 function addToCart(btn) {
     // 1. Obtener datos del producto desde el HTML
     // Usamos .closest para encontrar la tarjeta padre del botón clickeado
-    const card = btn.closest('.card'); 
-    
+    const card = btn.closest('.card');
+
     const product = {
         id: Date.now(), // ID único basado en el tiempo
         title: card.querySelector('.card-title').innerText,
@@ -21,7 +21,7 @@ function addToCart(btn) {
     const originalText = btn.innerHTML;
     btn.innerHTML = '<i class="fas fa-check"></i> Listo';
     btn.classList.replace('btn-outline-dark', 'btn-success');
-    
+
     setTimeout(() => {
         btn.innerHTML = originalText;
         btn.classList.replace('btn-success', 'btn-outline-dark');
@@ -29,7 +29,7 @@ function addToCart(btn) {
 
     // 4. Actualizar la interfaz del carrito
     updateCartUI();
-    
+
     // 5. Mostrar Toast (Notificación)
     const toastEl = document.getElementById('cartToast');
     // Actualizamos el texto del toast para que sea más dinámico
@@ -79,7 +79,7 @@ function updateCartUI() {
 
         const itemHTML = document.createElement('div');
         itemHTML.classList.add('cart-item', 'animate__animated', 'animate__fadeIn');
-        
+
         // Estructura visual del item
         itemHTML.innerHTML = `
             <img src="${item.image}" class="cart-thumb" alt="prod">
@@ -96,7 +96,7 @@ function updateCartUI() {
 
     // 5. Actualizar precio total con 2 decimales
     totalElement.innerText = "$" + totalPrice.toFixed(2);
-    
+
     // Animación visual del icono del carrito (Shake)
     const cartBtnIcon = document.querySelector('#cart-btn i');
     cartBtnIcon.classList.add('animate__animated', 'animate__headShake');
