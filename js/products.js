@@ -41,7 +41,7 @@ function loadProductsFromStorage() {
     if (productosStorage) {
         allProducts = JSON.parse(productosStorage);
         console.log("Productos cargados desde el localStorage");
-        
+        cargarProductosIniciales()
     } else {
         console.log("Productos cargados desde fetch");
         fetchProductsList();
